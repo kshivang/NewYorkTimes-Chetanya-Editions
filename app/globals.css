@@ -1,0 +1,58 @@
+/* Import Google Fonts - must come first */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Oswald:wght@400;500;600;700&family=UnifrakturMaguntia&display=swap');
+
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Tailwind v4 Theme Configuration */
+@theme {
+  --font-headline: Oswald, Impact, sans-serif;
+  --font-masthead: 'UnifrakturMaguntia', 'Old English Text MT', 'Blackletter686 BT', serif;
+  --font-body: Merriweather, Georgia, serif;
+  --font-sans: system-ui, sans-serif;
+
+  --color-nyt-black: #111111;
+  --color-nyt-gray: #333333;
+  --color-nyt-light-gray: #666666;
+  --color-nyt-cream: #f8f5f0;
+  --color-nyt-border: #e5e5e5;
+  --color-nyt-link: #326891;
+
+  --font-size-fluid-base: clamp(1rem, 2.5vw, 1.125rem);
+  --font-size-fluid-lg: clamp(1.25rem, 3vw, 1.5rem);
+  --font-size-fluid-xl: clamp(1.5rem, 4vw, 2.25rem);
+  --font-size-fluid-2xl: clamp(1.875rem, 5vw, 3rem);
+  --font-size-fluid-display: clamp(2.5rem, 8vw, 4.5rem);
+}
+
+@layer base {
+  html {
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-nyt-cream);
+    color: var(--color-nyt-gray);
+  }
+}
+
+@layer utilities {
+  .column-rule {
+    column-rule: 1px solid var(--color-nyt-border);
+  }
+
+  .drop-cap::first-letter {
+    float: left;
+    font-size: 4.5rem;
+    font-weight: 700;
+    font-family: var(--font-body);
+    margin-right: 0.75rem;
+    margin-top: 0.25rem;
+    line-height: 1;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
